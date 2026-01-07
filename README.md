@@ -1,236 +1,367 @@
-# Workflow
+# 🎯 WorkFlow - Team Organization & Management Platform
 
-A full-stack web application built with modern technologies for efficient workflow management.
+A full-stack web application designed to manage schedules, tasks, and social networking features for employees and interns within a firm.  Built with security and cybersecurity best practices in mind.  
 
-## Project Structure
+## 📋 Table of Contents
 
-```
-workflow/
-├── client/                    # Vite frontend application
-│   ├── public/               # Static assets
-│   ├── src/
-│   │   ├── assets/          # Images, fonts, and other media
-│   │   ├── components/      # Reusable React components
-│   │   ├── pages/           # Page components
-│   │   ├── App.jsx          # Main app component
-│   │   ├── main.jsx         # Application entry point
-│   │   └── index.css        # Global styles
-│   ├── index.html           # HTML entry point
-│   ├── vite.config.js       # Vite configuration
-│   ├── package.json         # Client dependencies and scripts
-│   └── .env.example         # Environment variables template
-│
-├── server/                    # Express backend application
-│   ├── models/              # MongoDB data models
-│   │   └── *.js             # Mongoose schemas
-│   ├── routes/              # API route handlers
-│   │   └── *.js             # Route definitions
-│   ├── controllers/         # Business logic
-│   │   └── *.js             # Controller functions
-│   ├── middleware/          # Custom middleware
-│   │   └── *.js             # Middleware functions
-│   ├── config/              # Configuration files
-│   │   └── db.js            # Database configuration
-│   ├── server.js            # Main server entry point
-│   ├── package.json         # Server dependencies and scripts
-│   ├── .env.example         # Environment variables template
-│   └── .gitignore           # Git ignore rules
-│
-├── .gitignore               # Root .gitignore
-└── README.md                # Project documentation
-```
-
-## Tech Stack
-
-### Frontend
-- **Framework:** React 18
-- **Build Tool:** Vite
-- **Styling:** CSS3 / Tailwind CSS (optional)
-- **HTTP Client:** Axios / Fetch API
-- **Package Manager:** npm / yarn
-
-### Backend
-- **Runtime:** Node.js
-- **Framework:** Express.js
-- **Database:** MongoDB
-- **ODM:** Mongoose
-- **Authentication:** JWT (JSON Web Tokens)
-- **Validation:** express-validator
-- **Environment:** dotenv
-
-### Database
-- **MongoDB** - NoSQL database for flexible data storage
-- **Mongoose** - ODM for MongoDB with schema validation
-
-## Getting Started
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-- MongoDB (local or cloud instance like MongoDB Atlas)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/iTsfedii/workflow.git
-   cd workflow
-   ```
-
-2. **Setup Frontend (Client)**
-   ```bash
-   cd client
-   npm install
-   cp .env.example .env.local
-   # Update .env.local with your API endpoint
-   ```
-
-3. **Setup Backend (Server)**
-   ```bash
-   cd ../server
-   npm install
-   cp .env.example .env
-   # Update .env with MongoDB URI and other configuration
-   ```
-
-### Environment Variables
-
-**Server (.env)**
-```
-PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/workflow
-NODE_ENV=development
-JWT_SECRET=your_jwt_secret_key
-```
-
-**Client (.env.local)**
-```
-VITE_API_URL=http://localhost:5000/api
-```
-
-### Running the Application
-
-**Development Mode**
-
-Terminal 1 - Start the backend server:
-```bash
-cd server
-npm run dev
-```
-
-Terminal 2 - Start the frontend development server:
-```bash
-cd client
-npm run dev
-```
-
-The application will be available at:
-- Frontend: `http://localhost:5173` (Vite default port)
-- Backend: `http://localhost:5000`
-
-**Production Build**
-
-Frontend:
-```bash
-cd client
-npm run build
-npm run preview
-```
-
-Backend:
-```bash
-cd server
-npm start
-```
-
-## API Endpoints
-
-The backend API provides RESTful endpoints. Common endpoint structure:
-
-```
-GET    /api/resource           - Get all resources
-GET    /api/resource/:id       - Get a specific resource
-POST   /api/resource           - Create a new resource
-PUT    /api/resource/:id       - Update a resource
-DELETE /api/resource/:id       - Delete a resource
-```
-
-## Features
-
-- ✅ Full-stack JavaScript application
-- ✅ Modern React with Vite for fast development
-- ✅ RESTful API with Express.js
-- ✅ MongoDB database integration
-- ✅ Environment-based configuration
-- ✅ Modular code structure
-
-## Development Workflow
-
-1. Create a feature branch
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes in either client or server directories
-
-3. Test your changes locally
-
-4. Commit and push your changes
-   ```bash
-   git add .
-   git commit -m "Add your meaningful commit message"
-   git push origin feature/your-feature-name
-   ```
-
-5. Create a Pull Request
-
-## Scripts
-
-### Frontend Scripts
-```json
-{
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview",
-  "lint": "eslint src"
-}
-```
-
-### Backend Scripts
-```json
-{
-  "start": "node server.js",
-  "dev": "nodemon server.js",
-  "test": "jest"
-}
-```
-
-## Deployment
-
-### Frontend Deployment
-- Build the frontend: `npm run build`
-- Deploy the `dist` folder to Vercel, Netlify, or any static hosting service
-
-### Backend Deployment
-- Deploy to Heroku, Railway, Render, or any Node.js hosting service
-- Ensure environment variables are properly configured
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-MIT License - feel free to use this project as you wish.
-
-## Support
-
-For questions or issues, please open an issue in the GitHub repository.
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Security Features](#-security-features)
+- [Installation](#-installation)
+- [Setup Instructions](#-setup-instructions)
+- [API Overview](#-api-overview)
+- [Development](#-development)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-Built with ❤️ by iTsfedii
+## ✨ Features
+
+### Core Features
+- ✅ **User Authentication** - Secure registration and login with JWT tokens
+- ✅ **User Profiles** - Employees/Interns can create and manage profiles with skills and status
+- �� **Task Management** - Assign, track, and update tasks with priority levels
+- ✅ **Calendar & Scheduler** - View and manage shifts, meetings, and deadlines
+- ✅ **Dashboard** - Personalized dashboard showing tasks, schedule, and updates
+- ✅ **Messaging & Chat** - Direct messaging between team members
+- ✅ **Social Feed** - Posts, comments, and social networking features
+- ✅ **Admin Panel** - Manage users, tasks, and system settings
+
+### Security Features 🔐
+- 🔒 **Password Hashing** - bcryptjs with 10+ salt rounds
+- 🔒 **JWT Authentication** - Secure token-based authentication
+- 🔒 **2FA Support** - Two-Factor Authentication (TOTP)
+- 🔒 **Role-Based Access Control** - Admin, Employee, Intern roles
+- 🔒 **Input Validation** - Prevent SQL injection and XSS attacks
+- 🔒 **Rate Limiting** - Prevent brute force attacks
+- 🔒 **Secure Headers** - CORS, HTTPS enforcement
+- 🔒 **Audit Logging** - Track all sensitive actions
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **React. js** - UI library
+- **Tailwind CSS / Bootstrap** - Styling
+- **React Router** - Client-side routing
+- **Axios** - HTTP client for API calls
+- **Redux / Context API** - State management
+- **React Hook Form** - Form management
+
+### Backend
+- **Node. js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - ODM (Object Data Modeling)
+- **JWT** - Authentication tokens
+- **bcryptjs** - Password hashing
+- **Socket.io** - Real-time messaging (optional)
+
+### Additional Tools
+- **Docker** - Containerization
+- **GitHub Actions** - CI/CD pipeline
+- **Postman** - API testing
+- **Vercel / Netlify** - Frontend hosting
+- **Render / Heroku** - Backend hosting
+
+---
+
+## 📁 Project Structure
+
+\`\`\`
+workflow/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Auth/
+│   │   │   ├── Dashboard/
+│   │   │   ├── Tasks/
+│   │   │   ├── Calendar/
+│   │   │   ├── Messages/
+│   │   │   ├── Profile/
+│   │   │   ├── Admin/
+│   │   │   └── Common/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── hooks/
+│   │   ├── context/
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+├── backend/
+│   ├── src/
+│   │   ├── routes/
+│   │   │   ├── auth.js
+│   │   │   ├── users.js
+│   │   │   ├── tasks.js
+│   │   │   ├── schedules.js
+│   │   │   └── messages.js
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Task.js
+│   │   │   ├── Schedule. js
+│   │   │   └── Message.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   └── validation.js
+│   │   ├── utils/
+│   │   ├── config/
+│   │   └── app.js
+│   ├── . env. example
+│   ├── package.json
+│   └── server.js
+│
+├── docs/
+│   ├── API.md
+│   ├── SECURITY.md
+│   └── SETUP.md
+│
+├── .gitignore
+├── . env.example
+├── docker-compose.yml
+└── README.md
+\`\`\`
+
+---
+
+## 🔐 Security Features
+
+### Authentication
+- **JWT Tokens** - Access & Refresh tokens
+- **Password Hashing** - bcryptjs (10+ rounds)
+- **2FA/TOTP** - Two-Factor Authentication
+- **Secure Cookies** - httpOnly, Secure, SameSite flags
+
+### Authorization
+- **Role-Based Access Control (RBAC)**
+  - ADMIN: Full system access
+  - EMPLOYEE:  Manage interns and own data
+  - INTERN: Limited access to own data
+
+### Data Protection
+- **Input Validation** - Server-side validation on all endpoints
+- **XSS Prevention** - Input sanitization
+- **SQL Injection Prevention** - Parameterized queries via Mongoose
+- **CORS** - Whitelist allowed domains
+- **Rate Limiting** - Prevent brute force attacks (5 attempts per 15 min)
+
+### Monitoring
+- **Audit Logging** - Track sensitive actions
+- **Error Handling** - Secure error messages (no sensitive info leakage)
+- **HTTPS Enforcement** - SSL/TLS in production
+
+---
+
+## 💾 Installation
+
+### Prerequisites
+- **Node.js** v16+
+- **npm** or **yarn**
+- **MongoDB** (local or cloud)
+- **Git**
+
+### Clone Repository
+
+\`\`\`bash
+git clone https://github.com/iTsfedii/workflow.git
+cd workflow
+\`\`\`
+
+---
+
+## 🚀 Setup Instructions
+
+### Backend Setup
+
+1. **Navigate to backend folder:**
+\`\`\`bash
+cd backend
+\`\`\`
+
+2. **Install dependencies:**
+\`\`\`bash
+npm install
+\`\`\`
+
+3. **Create .env file:**
+\`\`\`bash
+cp .env.example .env
+\`\`\`
+
+4. **Configure .env file with your values**
+
+5. **Start MongoDB** (local or cloud)
+
+6. **Start backend server:**
+\`\`\`bash
+npm start
+# Or for development
+npm run dev
+\`\`\`
+
+Server runs on:  \`http://localhost:5000\`
+
+---
+
+### Frontend Setup
+
+1. **Navigate to frontend folder:**
+\`\`\`bash
+cd frontend
+\`\`\`
+
+2. **Install dependencies:**
+\`\`\`bash
+npm install
+\`\`\`
+
+3. **Create .env file:**
+\`\`\`bash
+cp .env.example .env
+\`\`\`
+
+4. **Configure .env file**
+
+5. **Start development server:**
+\`\`\`bash
+npm run dev
+\`\`\`
+
+App runs on: \`http://localhost:5173\`
+
+---
+
+## 📡 API Overview
+
+### Authentication Endpoints
+\`\`\`
+POST   /api/auth/register
+POST   /api/auth/login
+POST   /api/auth/logout
+POST   /api/auth/refresh-token
+POST   /api/auth/2fa/setup
+POST   /api/auth/2fa/verify
+\`\`\`
+
+### User Endpoints
+\`\`\`
+GET    /api/users/me
+GET    /api/users/:id
+PUT    /api/users/:id
+GET    /api/users (admin only)
+DELETE /api/users/: id (admin only)
+\`\`\`
+
+### Task Endpoints
+\`\`\`
+GET    /api/tasks
+POST   /api/tasks
+GET    /api/tasks/:id
+PUT    /api/tasks/:id
+DELETE /api/tasks/:id
+\`\`\`
+
+### Schedule Endpoints
+\`\`\`
+GET    /api/schedules
+POST   /api/schedules
+GET    /api/schedules/:id
+PUT    /api/schedules/:id
+DELETE /api/schedules/:id
+\`\`\`
+
+### Message Endpoints
+\`\`\`
+GET    /api/messages
+POST   /api/messages
+GET    /api/messages/:conversationId
+PUT    /api/messages/:id/read
+\`\`\`
+
+For detailed API documentation, see [API. md](docs/API.md)
+
+---
+
+## 👨‍💻 Development
+
+### Project Phases
+
+**Phase 1: Foundation** 
+- User authentication
+- JWT implementation
+- Database models
+
+**Phase 2: Core Features** 
+- Task management
+- Calendar/Scheduler
+- User profiles
+
+**Phase 3: Social Features** 
+- Direct messaging
+- Social feed
+- Notifications
+
+**Phase 4: Security Hardening**
+- 2FA implementation
+- Audit logging
+- Rate limiting
+
+**Phase 5: Testing & Polish**
+- Unit tests
+- Integration tests
+
+**Phase 6: Deployment**
+- Docker setup
+- Production deployment
+
+---
+
+## 🌐 Deployment
+
+### Frontend (Vercel/Netlify)
+1. Push code to GitHub
+2. Connect repository to Vercel/Netlify
+3. Set environment variables
+4. Deploy! 
+
+### Backend (Render/Heroku)
+1. Push code to GitHub
+2. Connect repository to Render/Heroku
+3. Set environment variables
+4. Deploy!
+
+---
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Commit with meaningful messages
+4. Push to branch
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License.  
+
+---
+
+## 👤 Author
+
+**iTsfedii**
+- GitHub: [@iTsfedii](https://github.com/iTsfedii)
+
+---
+
+**Happy coding! 🚀**
