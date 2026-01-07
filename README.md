@@ -1,6 +1,6 @@
 # 🎯 WorkFlow - Team Organization & Management Platform
 
-A full-stack web application designed to manage schedules, tasks, and social networking features for employees and interns within a firm.  Built with security and cybersecurity best practices in mind.
+A full-stack web application designed to manage schedules, tasks, and social networking features for employees and interns within a firm.  Built with security and cybersecurity best practices in mind. 
 
 ## 📋 Table of Contents
 
@@ -53,7 +53,7 @@ A full-stack web application designed to manage schedules, tasks, and social net
 - **React Hook Form** - Form management
 
 ### Backend
-- **Node.js** - Runtime environment
+- **Node. js** - Runtime environment
 - **Express.js** - Web framework
 - **MongoDB** - NoSQL database
 - **Mongoose** - ODM (Object Data Modeling)
@@ -72,6 +72,7 @@ A full-stack web application designed to manage schedules, tasks, and social net
 
 ## 📁 Project Structure
 
+\`\`\`
 workflow/
 ├── frontend/
 │   ├── public/
@@ -98,9 +99,9 @@ workflow/
 ├── backend/
 │   ├── src/
 │   │   ├── routes/
-│   │   │   ├── auth.js
+│   │   │   ├── auth. js
 │   │   │   ├── users.js
-│   │   │   ├── tasks. js
+│   │   │   ├── tasks.js
 │   │   │   ├── schedules.js
 │   │   │   └── messages.js
 │   │   ├── controllers/
@@ -120,14 +121,15 @@ workflow/
 │   └── server.js
 │
 ├── docs/
-│   ├── API.md
+│   ├── API. md
 │   ├── SECURITY.md
 │   └── SETUP.md
 │
-├── . gitignore
-├── .env. example
+├── .gitignore
+├── .env.example
 ├── docker-compose.yml
 └── README.md
+\`\`\`
 
 ---
 
@@ -169,8 +171,10 @@ workflow/
 
 ### Clone Repository
 
-git clone https://github.com/iTsfedii/workflow.git
+\`\`\`bash
+git clone https://github.com/iTsfedii/workflow. git
 cd workflow
+\`\`\`
 
 ---
 
@@ -178,43 +182,59 @@ cd workflow
 
 ### Backend Setup
 
-1. Navigate to backend folder:
+1. **Navigate to backend folder:**
+\`\`\`bash
 cd backend
+\`\`\`
 
-2. Install dependencies:
+2. **Install dependencies:**
+\`\`\`bash
 npm install
+\`\`\`
 
-3. Create . env file:
-cp .env. example .env
+3. **Create . env file:**
+\`\`\`bash
+cp .env.example .env
+\`\`\`
 
-4. Configure . env file with your values
+4. **Configure . env file with your values**
 
-5. Start MongoDB (local or cloud)
+5. **Start MongoDB** (local or cloud)
 
-6. Start backend server:
+6. **Start backend server:**
+\`\`\`bash
 npm start
 # Or for development
 npm run dev
+\`\`\`
 
-Server runs on: http://localhost:5000
+Server runs on:  http://localhost:5000
 
 ---
 
 ### Frontend Setup
 
-1. Navigate to frontend folder:
+1. **Navigate to frontend folder:**
+\`\`\`bash
 cd frontend
+\`\`\`
 
-2. Install dependencies:
+2. **Install dependencies:**
+\`\`\`bash
 npm install
+\`\`\`
 
-3. Create .env file:
-cp .env.example .env
+3. **Create .env file:**
+\`\`\`bash
+cp .env.example . env
+\`\`\`
 
-4. Configure .env file
+4. **Configure .env file**
 
-5. Start development server:
+5. **Start development server:**
+\`\`\`bash
 npm run dev
+\`\`\`
 
 App runs on: http://localhost:5173
 
@@ -223,41 +243,51 @@ App runs on: http://localhost:5173
 ## 📡 API Overview
 
 ### Authentication Endpoints
+\`\`\`
 POST   /api/auth/register
 POST   /api/auth/login
 POST   /api/auth/logout
 POST   /api/auth/refresh-token
 POST   /api/auth/2fa/setup
 POST   /api/auth/2fa/verify
+\`\`\`
 
 ### User Endpoints
+\`\`\`
 GET    /api/users/me
-GET    /api/users/:id
+GET    /api/users/: id
 PUT    /api/users/:id
 GET    /api/users (admin only)
 DELETE /api/users/:id (admin only)
+\`\`\`
 
 ### Task Endpoints
+\`\`\`
 GET    /api/tasks
 POST   /api/tasks
 GET    /api/tasks/:id
 PUT    /api/tasks/:id
 DELETE /api/tasks/:id
+\`\`\`
 
 ### Schedule Endpoints
+\`\`\`
 GET    /api/schedules
 POST   /api/schedules
-GET    /api/schedules/: id
+GET    /api/schedules/:id
 PUT    /api/schedules/:id
 DELETE /api/schedules/:id
+\`\`\`
 
 ### Message Endpoints
+\`\`\`
 GET    /api/messages
 POST   /api/messages
 GET    /api/messages/:conversationId
 PUT    /api/messages/:id/read
+\`\`\`
 
-For detailed API documentation, see API.md
+For detailed API documentation, see [API.md](docs/API.md)
 
 ---
 
@@ -307,7 +337,7 @@ For detailed API documentation, see API.md
 1. Push code to GitHub
 2. Connect repository to Render/Heroku
 3. Set environment variables
-4. Deploy! 
+4. Deploy!
 
 ---
 
@@ -323,7 +353,7 @@ For detailed API documentation, see API.md
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. 
 
 ---
 
