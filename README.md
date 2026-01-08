@@ -1,26 +1,25 @@
 # 🎯 WorkFlow - Team Organization & Management Platform
 
-A full-stack web application designed to manage schedules, tasks, and social networking features for employees and interns within a firm.  Built with security and cybersecurity best practices in mind. 
+A full-stack web application designed to manage schedules, tasks, and social networking features for employees and interns within a firm. Built with security and cybersecurity best practices in mind.
 
 ## 📋 Table of Contents
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Security Features](#-security-features)
-- [Installation](#-installation)
-- [Setup Instructions](#-setup-instructions)
-- [API Overview](#-api-overview)
-- [Development](#-development)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
-
----
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Security Features](#security-features)
+- [Installation](#installation)
+- [Setup Instructions](#setup-instructions)
+- [API Overview](#api-overview)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## ✨ Features
 
 ### Core Features
+
 - ✅ **User Authentication** - Secure registration and login with JWT tokens
 - ✅ **User Profiles** - Employees/Interns can create and manage profiles with skills and status
 - ✅ **Task Management** - Assign, track, and update tasks with priority levels
@@ -31,6 +30,7 @@ A full-stack web application designed to manage schedules, tasks, and social net
 - ✅ **Admin Panel** - Manage users, tasks, and system settings
 
 ### Security Features 🔐
+
 - 🔒 **Password Hashing** - bcryptjs with 10+ salt rounds
 - 🔒 **JWT Authentication** - Secure token-based authentication
 - 🔒 **2FA Support** - Two-Factor Authentication (TOTP)
@@ -40,12 +40,11 @@ A full-stack web application designed to manage schedules, tasks, and social net
 - 🔒 **Secure Headers** - CORS, HTTPS enforcement
 - 🔒 **Audit Logging** - Track all sensitive actions
 
----
-
 ## 🛠 Tech Stack
 
 ### Frontend
-- **React. js** - UI library
+
+- **React.js** - UI library
 - **Tailwind CSS / Bootstrap** - Styling
 - **React Router** - Client-side routing
 - **Axios** - HTTP client for API calls
@@ -53,7 +52,8 @@ A full-stack web application designed to manage schedules, tasks, and social net
 - **React Hook Form** - Form management
 
 ### Backend
-- **Node. js** - Runtime environment
+
+- **Node.js** - Runtime environment
 - **Express.js** - Web framework
 - **MongoDB** - NoSQL database
 - **Mongoose** - ODM (Object Data Modeling)
@@ -62,17 +62,16 @@ A full-stack web application designed to manage schedules, tasks, and social net
 - **Socket.io** - Real-time messaging (optional)
 
 ### Additional Tools
+
 - **Docker** - Containerization
 - **GitHub Actions** - CI/CD pipeline
 - **Postman** - API testing
 - **Vercel / Netlify** - Frontend hosting
 - **Render / Heroku** - Backend hosting
 
----
-
 ## 📁 Project Structure
 
-\`\`\`
+```
 workflow/
 ├── frontend/
 │   ├── public/
@@ -99,7 +98,7 @@ workflow/
 ├── backend/
 │   ├── src/
 │   │   ├── routes/
-│   │   │   ├── auth. js
+│   │   │   ├── auth.js
 │   │   │   ├── users.js
 │   │   │   ├── tasks.js
 │   │   │   ├── schedules.js
@@ -108,7 +107,7 @@ workflow/
 │   │   ├── models/
 │   │   │   ├── User.js
 │   │   │   ├── Task.js
-│   │   │   ├── Schedule. js
+│   │   │   ├── Schedule.js
 │   │   │   └── Message.js
 │   │   ├── middleware/
 │   │   │   ├── auth.js
@@ -116,12 +115,12 @@ workflow/
 │   │   ├── utils/
 │   │   ├── config/
 │   │   └── app.js
-│   ├── . env. example
+│   ├── .env.example
 │   ├── package.json
 │   └── server.js
 │
 ├── docs/
-│   ├── API. md
+│   ├── API.md
 │   ├── SECURITY.md
 │   └── SETUP.md
 │
@@ -129,25 +128,27 @@ workflow/
 ├── .env.example
 ├── docker-compose.yml
 └── README.md
-\`\`\`
-
----
+```
 
 ## 🔐 Security Features
 
 ### Authentication
+
 - **JWT Tokens** - Access & Refresh tokens
 - **Password Hashing** - bcryptjs (10+ rounds)
 - **2FA/TOTP** - Two-Factor Authentication
 - **Secure Cookies** - httpOnly, Secure, SameSite flags
 
 ### Authorization
-- **Role-Based Access Control (RBAC)**
-  - ADMIN: Full system access
-  - EMPLOYEE:  Manage interns and own data
-  - INTERN: Limited access to own data
+
+**Role-Based Access Control (RBAC)**
+
+- **ADMIN**: Full system access
+- **EMPLOYEE**: Manage interns and own data
+- **INTERN**: Limited access to own data
 
 ### Data Protection
+
 - **Input Validation** - Server-side validation on all endpoints
 - **XSS Prevention** - Input sanitization
 - **SQL Injection Prevention** - Parameterized queries via Mongoose
@@ -155,141 +156,146 @@ workflow/
 - **Rate Limiting** - Prevent brute force attacks (5 attempts per 15 min)
 
 ### Monitoring
+
 - **Audit Logging** - Track sensitive actions
 - **Error Handling** - Secure error messages (no sensitive info leakage)
 - **HTTPS Enforcement** - SSL/TLS in production
 
----
-
 ## 💾 Installation
 
 ### Prerequisites
-- **Node.js** v16+
-- **npm** or **yarn**
-- **MongoDB** (local or cloud)
-- **Git**
+
+- Node.js v16+
+- npm or yarn
+- MongoDB (local or cloud)
+- Git
 
 ### Clone Repository
 
-\`\`\`bash
-git clone https://github.com/iTsfedii/workflow. git
+```bash
+git clone https://github.com/iTsfedii/workflow.git
 cd workflow
-\`\`\`
-
----
+```
 
 ## 🚀 Setup Instructions
 
 ### Backend Setup
 
-1. **Navigate to backend folder:**
-\`\`\`bash
+1. Navigate to backend folder:
+
+```bash
 cd backend
-\`\`\`
+```
 
-2. **Install dependencies:**
-\`\`\`bash
+2. Install dependencies:
+
+```bash
 npm install
-\`\`\`
+```
 
-3. **Create . env file:**
-\`\`\`bash
+3. Create `.env` file:
+
+```bash
 cp .env.example .env
-\`\`\`
+```
 
-4. **Configure . env file with your values**
+4. Configure `.env` file with your values
 
-5. **Start MongoDB** (local or cloud)
+5. Start MongoDB (local or cloud)
 
-6. **Start backend server:**
-\`\`\`bash
+6. Start backend server:
+
+```bash
 npm start
 # Or for development
 npm run dev
-\`\`\`
+```
 
-Server runs on:  http://localhost:5000
-
----
+Server runs on: `http://localhost:5000`
 
 ### Frontend Setup
 
-1. **Navigate to frontend folder:**
-\`\`\`bash
+1. Navigate to frontend folder:
+
+```bash
 cd frontend
-\`\`\`
+```
 
-2. **Install dependencies:**
-\`\`\`bash
+2. Install dependencies:
+
+```bash
 npm install
-\`\`\`
+```
 
-3. **Create .env file:**
-\`\`\`bash
-cp .env.example . env
-\`\`\`
+3. Create `.env` file:
 
-4. **Configure .env file**
+```bash
+cp .env.example .env
+```
 
-5. **Start development server:**
-\`\`\`bash
+4. Configure `.env` file
+
+5. Start development server:
+
+```bash
 npm run dev
-\`\`\`
+```
 
-App runs on: http://localhost:5173
-
----
+App runs on: `http://localhost:5173`
 
 ## 📡 API Overview
 
 ### Authentication Endpoints
-\`\`\`
-POST   /api/auth/register
-POST   /api/auth/login
-POST   /api/auth/logout
-POST   /api/auth/refresh-token
-POST   /api/auth/2fa/setup
-POST   /api/auth/2fa/verify
-\`\`\`
+
+```
+POST /api/auth/register
+POST /api/auth/login
+POST /api/auth/logout
+POST /api/auth/refresh-token
+POST /api/auth/2fa/setup
+POST /api/auth/2fa/verify
+```
 
 ### User Endpoints
-\`\`\`
+
+```
 GET    /api/users/me
-GET    /api/users/: id
+GET    /api/users/:id
 PUT    /api/users/:id
 GET    /api/users (admin only)
 DELETE /api/users/:id (admin only)
-\`\`\`
+```
 
 ### Task Endpoints
-\`\`\`
+
+```
 GET    /api/tasks
 POST   /api/tasks
 GET    /api/tasks/:id
 PUT    /api/tasks/:id
 DELETE /api/tasks/:id
-\`\`\`
+```
 
 ### Schedule Endpoints
-\`\`\`
+
+```
 GET    /api/schedules
 POST   /api/schedules
 GET    /api/schedules/:id
 PUT    /api/schedules/:id
 DELETE /api/schedules/:id
-\`\`\`
+```
 
 ### Message Endpoints
-\`\`\`
-GET    /api/messages
-POST   /api/messages
-GET    /api/messages/:conversationId
-PUT    /api/messages/:id/read
-\`\`\`
+
+```
+GET /api/messages
+POST /api/messages
+GET /api/messages/:conversationId
+PUT /api/messages/:id/read
+```
 
 For detailed API documentation, see [API.md](docs/API.md)
-
----
 
 ## 👨‍💻 Development
 
@@ -323,23 +329,21 @@ For detailed API documentation, see [API.md](docs/API.md)
 - Docker setup
 - Production deployment
 
----
-
 ## 🌐 Deployment
 
 ### Frontend (Vercel/Netlify)
+
 1. Push code to GitHub
 2. Connect repository to Vercel/Netlify
 3. Set environment variables
-4. Deploy! 
+4. Deploy!
 
 ### Backend (Render/Heroku)
+
 1. Push code to GitHub
 2. Connect repository to Render/Heroku
 3. Set environment variables
 4. Deploy!
-
----
 
 ## 🤝 Contributing
 
@@ -349,19 +353,16 @@ For detailed API documentation, see [API.md](docs/API.md)
 4. Push to branch
 5. Open a Pull Request
 
----
-
 ## 📝 License
 
-This project is licensed under the MIT License. 
-
----
+This project is licensed under the MIT License.
 
 ## 👤 Author
 
 **iTsfedii**
+
 - GitHub: [@iTsfedii](https://github.com/iTsfedii)
 
 ---
 
-**Happy coding! 🚀**
+Happy coding! 🚀
